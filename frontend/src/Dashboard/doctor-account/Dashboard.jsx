@@ -48,7 +48,7 @@ console.log(data);
                 {tab === 'overview' && (
   <div>
     <div className='flex items-center gap-4 mb-10'>
-      <figure className='max-w-[200px] max-h-[200px]'>
+      <figure className='max-w-[200px] max-h-[00px]'>
         <img src={data?.photo} alt="User Photo" className='w-full'/>
       </figure>
       <div>

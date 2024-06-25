@@ -3,18 +3,45 @@ import userImg from '../../assets/images/doctor-img01.png';
 import { authContext } from '../../context/AuthContext';
 import useGetProfile from '../../hooks/useFetchData'; // Assuming useFetchData handles fetching data from backend
 import uploadImageToCloundinary from '../../utils/uploadCloudinary.js';
-import { BASE_URL } from '../../config';
+import { BASE_URL,  token } from '../../config';
 import MyBookings from './MyBookings';
 import Profile from './Profile';
 import Loading from '../../components/Loader/Loading.jsx';
 import Error from '../../components/Error/Error.jsx';
+import { useParams } from 'react-router-dom';
 export default function Myaccount() {
   const { dispatch } = useContext(authContext);
   const [tab, setTab] = useState('bookings');
   const { data: userData, loading, error } = useGetProfile(`${BASE_URL}/users/profile/me`);
-   
+ 
   const handleLogOut = () => {
     dispatch({ type: "LOGOUT" });
+  };
+  
+  const handleDeleteAccount = async () => {
+    try {
+      
+      
+      const response = await fetch(`${BASE_URL}/users/${userData._id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        dispatch({ type: 'LOGOUT' }); // Example logout action if needed
+        // Perform any other cleanup or redirection logic after successful deletion
+        console.log('Account deleted successfully');
+      } else {
+        console.error('Failed to delete account');
+        // Handle error scenario as needed
+      }
+    } catch (error) {
+      console.error('Error deleting account:', error);
+      // Handle error scenario as needed
+    }
   };
   
 
@@ -43,7 +70,7 @@ export default function Myaccount() {
             </div>
             <div className='mt-[50px] md:mt-[100px]'>
               <button onClick={handleLogOut} className='w-full bg-[#181A1E] p-3 text-[16px] leading-7 rounded-md text-white'>Logout</button>
-              <button className='w-full bg-red-600 p-3 mt-4 text-[16px] leading-7 rounded-md text-white'>Delete Account</button>
+              <button  onClick={handleDeleteAccount} className='w-full bg-red-600 p-3 mt-4 text-[16px] leading-7 rounded-md text-white'>Delete Account</button>
             </div>
           </div>
           <div>

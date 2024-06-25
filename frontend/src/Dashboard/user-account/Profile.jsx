@@ -27,10 +27,12 @@ const Profile = ({ user }) => {
         password: '',
         photo: user.photo,
         gender: user.gender || '',
-        bloodType: user.bloodType || ''
+        bloodType: user.bloodType || '',
+        
       });
     }
   }, [user]);
+  
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [ e.target.name ]: e.target.value });

@@ -35,6 +35,7 @@ const Profile = ({doctorData}={}) => {
     timeSlots: doctorData?.timeSlots,
     about: doctorData?.about,
     photo: doctorData?.photo,
+    
     })
   },[doctorData])
 
