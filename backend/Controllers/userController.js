@@ -67,17 +67,24 @@ export const getUserProfile = async (req, res) => {
 };
 
 export const getMyappointments = async (req, res) => {
-    try{
-         const bookings = await Booking.find({user:req.userId});
-
-         const doctorIds = bookings.map(el=>el.doctor.id);
-          
-         const doctors = await Doctor.find({_id:{$in:doctorIds}}).select('-password');
-         res.status(200).json({success: true, message: ' Your Appointments', data:{doctors}});
+    try {
+      const bookings = await Booking.find({ user: req.userId });
+  
+      if (!bookings) {
+        return res.status(404).json({ success: false, message: 'Bookings not found' });
+      }
+  
+      const doctorIds = bookings.map(el => el.doctor);
+  
+      const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select('-password');
+  
+      if (!doctors) {
+        return res.status(404).json({ success: false, message: 'Doctors not found' });
+      }
+  
+      res.status(200).json({ success: true, message: 'Your Appointments', data: { doctors } });
+    } catch (error) {
+      console.error('Error fetching appointments:', error);
+      res.status(500).json({ success: false, message: 'Failed to fetch appointments' });
     }
-
-    catch(error)
-    {
-            res.status(500).json({success:false,message:'failed'})
-    }
-}
+  };

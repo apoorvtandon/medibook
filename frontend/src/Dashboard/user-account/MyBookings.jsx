@@ -16,7 +16,7 @@ const MyBookings = () => {
   return (
     <div>
       {loading && !error && <Loading />}
-      {error && !loading && <Error errorMessage={error} />}
+      
       {!loading && !error && (
         <>
           {appointments.doctors.length > 0 ? (
