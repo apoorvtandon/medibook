@@ -73,7 +73,7 @@ const Header = () => {
             {token && user ? (
               <div className='flex items-center gap-2'>
                 <Link to={role === 'doctor' ? '/doctors/profile/me' : '/users/profile/me'}>
-                <span className='text-[16px] leading-7 font-[600]'>My profile</span>
+                <span className='text-[16px] leading-7 font-[600] text-textColor '>My profile</span>
                 </Link>
                 
               </div>

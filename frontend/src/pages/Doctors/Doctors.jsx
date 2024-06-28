@@ -26,7 +26,7 @@ const Doctors = () => {
 
   return (
     <>
-      <section className='bg-[#fff9ea]'>
+      <section className='bg-[#fff9ea] '>
         <div className="max-w-full w-[1440px] px-5 mx-auto text-center min-h-[200px]">
           <h2 className='heading'>Find A Doctor</h2>
           <div className='max-w-[570px] mt-[30px] mx-auto bg-[#00ffff2c] rounded-md flex items-center justify-between'>
