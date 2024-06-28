@@ -13,6 +13,7 @@ const DoctorDetails = () => {
   const [tab, setTab] = useState('about');
   const {id} = useParams();
    const { data: doctor, loading, error } = useFetchData(`${BASE_URL}/doctors/${id}`);
+   console.log(doctor);
    if (loading) {
     return <Loader />;
   }
@@ -28,12 +29,13 @@ const DoctorDetails = () => {
     reviews,
     bio,
     about,
-    averageRating,
-    totalRating,
+    
     specialization,
     ticketPrice,
     photo,
    } = doctor
+   const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
+   const averageRating = (totalRating / reviews.length).toFixed(1);
   return (
     <section>
       <div className='max-w-[1170px] px-5 mx-auto py-12 mb-10'>
@@ -47,17 +49,17 @@ const DoctorDetails = () => {
              </figure>
              <div>
                <span className='bg-[#CCF0F3] text-irisBlueColor py-1 px-6 lg:py-2 lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded'>
-                 Surgeon
+                {doctor.specialization}
                </span>
-               <h3 className='text-headingColor text-[22px] leading-9 mt-3 font-bold'>Lorem Ipsum</h3>
+               <h3 className='text-headingColor text-[22px] leading-9 mt-3 font-bold'>{doctor.name}</h3>
                <div className='flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-headingColor'>
                  <span className='flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-headingColor'>
-                   <img src={starIcon} alt="Star" /> 4.8
+                   <img src={starIcon} alt="Star" /> {averageRating}
                  </span>
-                 <span className='text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-textColor'>(272)</span>
+                 <span className='text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold text-textColor'>({reviews.length})</span>
                </div>
                <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px]'>
-                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, dolorem!
+                {bio}
                </p>
              </div>
            </div>

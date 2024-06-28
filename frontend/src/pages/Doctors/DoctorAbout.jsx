@@ -1,6 +1,7 @@
 import React from 'react'
 import { formDate } from '../../utils/formDate'
 const DoctorAbout = ({name,about,qualifications,experiences}) => {
+  
   return (
     <div>
         <div>
