@@ -4,7 +4,7 @@ import { BiMenu } from 'react-icons/bi';
 import logo from '../../assets/images/logo.png';
 import userImg from '../../assets/images/avatar-icon.png';
 import { authContext } from '../../context/AuthContext';
-
+import mlogo from '../../assets/images/mlogo.jpg'
 const navLinks = [
   { path: '/home', display: 'Home' },
   { path: '/doctors', display: 'Find a Doctor' },
@@ -47,7 +47,8 @@ const Header = () => {
       <div className='container'>
         <div className='flex items-center justify-between'>
           <div>
-            <img src={logo} alt="Logo" />
+           
+          <Link to='/'><h1 className='font-bold text-3xl'>MediBook</h1></Link>  
           </div>
           <div className='navigation' ref={menuRef}>
             <ul className='menu flex items-center gap-[2.7rem]'>

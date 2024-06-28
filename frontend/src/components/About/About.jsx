@@ -21,12 +21,11 @@ const About = () => {
             Proud to be on one of the Nation's Best
           </h2>
           <p className="text__para ">
-          Lorem ipsum dolor sit amet, consectetur aex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          MediBook is a comprehensive doctor booking website designed to streamline the process of scheduling medical appointments. With an intuitive interface, patients can effortlessly search for doctors based on specialization, location, and availability. 
 
           </p>
           <p className='text__para'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm   commodo consequat. Duis aute irure dolor in reprehenderit in
-
+          The platform provides detailed doctor profiles, including qualifications, patient reviews, and clinic locations, ensuring users make informed decisions. Additionally, MediBook offers real-time appointment booking and reminders, enhancing the convenience and efficiency of healthcare management.
           </p>
           <Link to="/" className="inline-block">
             <button className="btn">Learn More</button>

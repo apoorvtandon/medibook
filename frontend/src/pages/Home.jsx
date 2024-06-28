@@ -14,6 +14,8 @@ import ServiceList from '../components/Services/ServiceList';
 import featureImg  from '../assets/images/feature-img.png'
 import DoctorList from '../components/Doctors/DoctorList';
 import faqImg from '../assets/images/faq-img.png'
+import doc from '../assets/images/doc.jpg'
+
 const Home = () => {
   return (
     <>
@@ -59,7 +61,7 @@ const Home = () => {
             </div>
             <div className='flex gap-[30px] justify-end'>
                 <div className='-ml-12 mt-[-30px]'>
-                    <img className='w-full' src={heroImg01} alt=""/>
+                    <img className='w-full' src={doc} alt=""/>
                 </div>
                 <div className='mt-[-30px]'>
                 <img  src={heroImg02} className='w-full mb-[30px]' alt=""/>
@@ -135,7 +137,7 @@ const Home = () => {
             <div className='xl:w-[470px] mx-auto'>
                 <h2 className='heading text-center'>Our Medical Services</h2>
                 <p className='text__para text-center'>
-                commodo consequat. Duis aute irure dolor in reprehenderit in
+                 
                 </p>
             </div>
             <ServiceList/>

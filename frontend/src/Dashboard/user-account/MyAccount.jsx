@@ -49,7 +49,7 @@ export default function Myaccount() {
 
   return (
     <section>
-      <div className='max-w-[1170px] px-5 mx-auto'>
+      <div className='max-w-[1170px] px-5 mx-auto mt-20 mb-20'>
         {loading && !error && <Loading/>}
         {error && !loading && <Error errorMessage={error}/>}
         {
@@ -80,10 +80,11 @@ export default function Myaccount() {
             <button onClick={() => setTab('settings')} className={`${tab === 'settings' && 'bg-primaryColor text-white font-normal'} py-2 px-5 rounded-md text-headingColor font-semibold text-[16px] leading-7 border border-solid border-primaryColor`}>
               Profile Settings
             </button>
+            {tab === 'bookings' && <MyBookings />}
+          {tab === 'settings' && <Profile user={userData} />}
           </div>
 
-          {tab === 'bookings' && <MyBookings />}
-          {tab === 'settings' && <Profile user={userData} />}
+          
         </div>
           )
         }

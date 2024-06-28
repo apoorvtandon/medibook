@@ -3,7 +3,7 @@ import { BASE_URL } from "../../config";
 import DoctorCard from '../../components/Doctors/DoctorCard.jsx';
 import Error from '../../components/Error/Error.jsx'
 import Loading from '../../components/Loader/Loading.jsx';
-
+ 
 const MyBookings = () => {
   const { data: appointments, loading, error } = useFetchData(`${BASE_URL}/users/appointments/my-appointments`);
   
@@ -20,10 +20,10 @@ const MyBookings = () => {
       {!loading && !error && (
         <>
           {appointments.doctors.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {appointments.doctors.map(doctor => {
                 // Debug: Log each doctor object to ensure it's being passed correctly
-                console.log('doctor:', doctor);
+             
                 return <DoctorCard doctor={doctor} key={doctor._id} />
               })}
             </div>
