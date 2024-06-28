@@ -49,7 +49,7 @@ export default function Footer() {
           <h4 className="text-pink-600 font-bold mb-4">Contact Info</h4>
           <ul className="space-y-2">
             <li className="text-slate-700"><i className="fas fa-phone-alt"></i>+91 4908506840</li>
-            <li className="text-slate-700"><i className="fas fa-envelope"></i>mernestate@gmail.com</li>
+            <li className="text-slate-700"><i className="fas fa-envelope"></i>medibook@gmail.com</li>
             <li className="text-slate-700"><i className="fas fa-map-marker-alt"></i>Indore,Madhya Pradesh, India</li>
           </ul>
         </div>
