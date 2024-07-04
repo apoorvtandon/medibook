@@ -16,18 +16,19 @@ export const updateDoctor = async(req,res)=>{
 
 
 
-export const deleteDoctor = async(req,res)=>{
-    const id = req.params.id
+export const deleteDoctor = async (req, res) => {
+  const id = req.params.id;
 
-    try{
-      await Doctor.findByIdAndDelete(id,);
-       res.status(200).json({success:true,message:'successfully delted'})
+  try {
+    const doctor = await Doctor.findByIdAndDelete(id);
+    if (!doctor) {
+      return res.status(404).json({ success: false, message: 'Doctor not found' });
     }
-    catch(error)
-    {
-       res.status(500).json({success:false,message:'failed to delete'})
-    }
-}
+    res.status(200).json({ success: true, message: 'Successfully deleted' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Failed to delete' });
+  }
+};
 
 export const getSingleDoctor = async(req,res)=>{
     const id = req.params.id

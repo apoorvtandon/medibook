@@ -10,7 +10,7 @@ router.use('/:doctorId/reviews', reviewRouter)
 router.get('/:id',getSingleDoctor);
 router.get('/',getAllDoctor);
 router.put('/:id',updateDoctor)
-router.delete(':/id',deleteDoctor)
+router.delete('/:id',deleteDoctor)
 router.get('/profile/me',authenticate,getDoctorProfile);
  
 
