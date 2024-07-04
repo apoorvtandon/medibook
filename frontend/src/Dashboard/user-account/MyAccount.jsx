@@ -19,6 +19,8 @@ export default function Myaccount() {
   };
   
   const handleDeleteAccount = async () => {
+    const confirmed = window.confirm('Are you sure you want to delete your account? This action cannot be undone.');
+    if (confirmed){
     try {
       
       
@@ -41,7 +43,7 @@ export default function Myaccount() {
     } catch (error) {
       console.error('Error deleting account:', error);
       // Handle error scenario as needed
-    }
+    }}
   };
   
 

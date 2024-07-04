@@ -16,7 +16,7 @@ const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const { user, role, token } = useContext(authContext);
-   console.log('user');
+  
   const handleStickyHeader = () => {
     if (!headerRef.current) return;
 
