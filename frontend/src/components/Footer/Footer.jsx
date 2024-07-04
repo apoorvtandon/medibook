@@ -14,7 +14,8 @@ export default function Footer() {
             <span className="text-2xl font-bold text-pink-600">MediBook</span>
           </div>
           <p className="text-slate-700 mb-4">
-          Sahand Estate is your trusted partner in finding the perfect home. We offer<br/> a wide range of properties,from cozy apartments to luxurious villas, catering<br/> to all your real estate needs.Our team of experienced agents is dedicated to<br/> providing personalized service and expert advice to help you make informed decisions.
+          Join the Medibook community and take charge of your health.<br/> Connect with trusted healthcare professionals and access<br/> a wealth of medical resources. Medibook is here to support you <br/>every step of the way. Follow us on social media for updates and health tips.<br/> For assistance, email us at community@medibook.com.
+
           </p>
           <div className="flex space-x-4">
             <a href="https://github.com" className="text-slate-700 hover:text-pink-600">

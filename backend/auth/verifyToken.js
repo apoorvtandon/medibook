@@ -10,8 +10,8 @@ export const authenticate = (req, res, next) => {
     try {
         const token = authToken.split(' ')[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET_key);
-        req.userId = decoded.id; // Assuming 'id' is the key in your JWT payload
-        req.role = decoded.role; // Optionally include role if needed
+        req.userId = decoded.id;  
+        req.role = decoded.role;  
         next();
     } catch (error) {
         if (error.name === 'TokenExpiredError') {

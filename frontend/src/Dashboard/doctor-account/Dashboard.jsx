@@ -58,15 +58,7 @@ console.log(data);
      <h3 className="text-[22px] leading-9 font-bold text-headingColor mt-3">
        {data.name}
      </h3>
-     <div className="flex items-center gap-2 text-headingColor text-[14px] leading-5 lg:text-[16px] lg:leading-6">
-       <span className="flex items-center gap-1 lg:gap-2 text-headingColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">
-         <img src={starIcon} alt="Star Icon" className="w-4 h-4 lg:w-5 lg:h-5" />
-         {data.averageRating}
-       </span>
-       <span className="text-textColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">
-         ({data.totalRating})
-       </span>
-     </div>
+     
      <p className="text-[15px] lg:max-w-[390px] leading-6 mt-2">
        {data?.bio}
      </p>

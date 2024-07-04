@@ -68,7 +68,7 @@ export const getDoctorProfile = async (req, res) => {
   const doctorId = req.userId;
 
   try {
-    // Attempt to find the doctor by ID
+     
     const doctor = await Doctor.findById(doctorId);
 
     // If doctor is not found, return a 404 error
