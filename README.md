@@ -27,4 +27,7 @@ MediBook is a robust Doctor Appointment App built using the MERN stack (MongoDB,
 - **Stripe Integration:**
   - Secure payment processing using Stripe for booking transactions.
 
- 
+ ## Installation
+
+To run MediBook locally, clone the repository using `git clone https://github.com/apoorvtandon/medibook`, navigate into the `MediBook` directory, and install backend dependencies with `cd backend && npm install`. Then, switch to the `frontend` directory (`cd ../frontend`) and install frontend dependencies using `npm install`. Start the backend server (`cd ../backend && npm run dev`) followed by the frontend development server (`cd ../frontend && npm run dev`). Finally, open your browser and visit `http://localhost:5173` to use MediBook locally.
+
